@@ -10,7 +10,6 @@ ExternalProject_Add(ffmpeg
         opus
         vorbis
         dav1d
-        libva
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
@@ -30,7 +29,6 @@ ExternalProject_Add(ffmpeg
         --disable-doc
         --disable-programs
         --disable-avdevice
-        --disable-postproc
         --disable-encoders
         --disable-muxers
         --disable-devices
@@ -39,14 +37,12 @@ ExternalProject_Add(ffmpeg
         --enable-demuxer=mov,matroska,mpegts,mpegps,flv,avi,asf,mp3,aac,ogg,flac,wav,hls,dash,image2,ass,srt,webvtt,rtsp,rtp,sdp,h264,hevc,mpegvideo,live_flv,concat,nut,loas
         --enable-protocol=file,pipe,http,https,tcp,tls,crypto,httpproxy,data,udp,rtp,rtmp,rtmps,rtmpt,concat
         --enable-filter=scale,format,aformat,aresample,null,copy,fps,trim,setpts,overlay,pad,crop,transpose,anull
-        --enable-bsf=h264_mp4toannexb,hevc_mp4toannexb,aac_adtstoasc,vp9_superframe,extract_extradata
-        --enable-hwaccel=d3d11va,d3d11va2,dxva2,cuda,nvdec,vaapi
+        --enable-hwaccel=h264_d3d11va,h264_d3d11va2,h264_dxva2,h264_nvdec,hevc_d3d11va,hevc_d3d11va2,hevc_dxva2,hevc_nvdec,av1_d3d11va,av1_d3d11va2,av1_dxva2,av1_nvdec,vp9_d3d11va,vp9_d3d11va2,vp9_dxva2,vp9_nvdec,vp8_nvdec,mpeg2_d3d11va,mpeg2_d3d11va2,mpeg2_dxva2,mpeg2_nvdec,mpeg1_nvdec,mpeg4_nvdec,vc1_d3d11va,vc1_d3d11va2,vc1_dxva2,vc1_nvdec,wmv3_d3d11va,wmv3_d3d11va2,wmv3_dxva2,wmv3_nvdec,mjpeg_nvdec
         --enable-libass
         --enable-libdav1d
         --enable-openssl
         --enable-libopus
         --enable-libvorbis
-        --enable-vaapi
         --disable-vdpau
         --disable-videotoolbox
         ${ffmpeg_lto}
