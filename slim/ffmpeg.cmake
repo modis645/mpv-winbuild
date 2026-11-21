@@ -28,7 +28,6 @@ ExternalProject_Add(ffmpeg
         --enable-version3
         --disable-everything
         --disable-doc
-        --disable-programs
         --disable-avdevice
         --disable-encoders
         --disable-muxers
