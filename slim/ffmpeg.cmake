@@ -10,6 +10,7 @@ ExternalProject_Add(ffmpeg
         opus
         vorbis
         dav1d
+        libxml2
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
@@ -43,6 +44,7 @@ ExternalProject_Add(ffmpeg
         --enable-openssl
         --enable-libopus
         --enable-libvorbis
+        --enable-libxml2
         --disable-vdpau
         --disable-videotoolbox
         ${ffmpeg_lto}
